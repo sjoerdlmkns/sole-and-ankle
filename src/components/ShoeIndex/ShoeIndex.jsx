@@ -52,7 +52,11 @@ const MainColumn = styled.div`
   margin-left: 10%;
 `;
 
-const Header = styled.header``;
+const Header = styled.header`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
