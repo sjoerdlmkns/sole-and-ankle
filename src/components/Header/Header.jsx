@@ -1,18 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { COLORS, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
+import { COLORS, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import SuperHeader from "../SuperHeader";
 
 const Header = () => {
-  // Our site features two visual headers, but they should be
-  // grouped semantically as a single header.
   return (
     <header>
       <SuperHeader />
       <MainHeader>
-        <Logo />
+        <StyledLogo />
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -26,12 +24,29 @@ const Header = () => {
   );
 };
 
-const MainHeader = styled.div`
-  padding: 0 32px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+// Styled version of the Logo component
+const StyledLogo = styled(Logo)`
+  flex-shrink: 0; /* Prevent the logo from shrinking */
 `;
 
-const Nav = styled.nav``;
+const MainHeader = styled.div`
+  display: flex;
+  align-items: center; /* Centers items vertically */
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid ${COLORS.gray[300]};
+
+  /* Position logo on the left and nav in the center */
+  position: relative;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  gap: 26px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+`;
 
 const NavLink = styled.a`
   font-size: 1.125rem;
