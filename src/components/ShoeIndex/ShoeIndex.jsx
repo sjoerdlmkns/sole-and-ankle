@@ -45,7 +45,9 @@ const Wrapper = styled.div`
   flex-direction: row-reverse;
 `;
 
-const LeftColumn = styled.div``;
+const LeftColumn = styled.div`
+  min-width: 175px;
+`;
 
 const MainColumn = styled.div`
   flex-grow: 1;
@@ -53,9 +55,9 @@ const MainColumn = styled.div`
 `;
 
 const Header = styled.header`
-display: flex;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Title = styled.h2`
