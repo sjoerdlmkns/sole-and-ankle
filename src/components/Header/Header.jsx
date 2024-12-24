@@ -10,7 +10,9 @@ const Header = () => {
     <header>
       <SuperHeader />
       <MainHeader>
-        <StyledLogo />
+        <Side>
+          <Logo />
+        </Side>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -19,33 +21,28 @@ const Header = () => {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
+        <Side />
       </MainHeader>
     </header>
   );
 };
 
-// Styled version of the Logo component
-const StyledLogo = styled(Logo)`
-  flex-shrink: 0; /* Prevent the logo from shrinking */
-`;
-
 const MainHeader = styled.div`
   display: flex;
-  align-items: center; /* Centers items vertically */
-  justify-content: space-between;
   padding: 16px 32px;
+  height: 72px;
+  align-items: baseline;
   border-bottom: 1px solid ${COLORS.gray[300]};
-
-  /* Position logo on the left and nav in the center */
-  position: relative;
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 26px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  gap: 48px;
+  margin: 0px 48px;
+`;
+
+const Side = styled.div`
+  flex: 1;
 `;
 
 const NavLink = styled.a`
